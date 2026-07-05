@@ -81,6 +81,7 @@ return {
             { icon = " ", key = "n", desc = "New file", action = ":ene | startinsert" },
             { icon = " ", key = "r", desc = "Recent files", action = ":lua Snacks.dashboard.pick('oldfiles')" },
             { icon = " ", key = "g", desc = "Find text", action = ":lua Snacks.dashboard.pick('live_grep')" },
+            { icon = " ", key = "k", desc = "Keymaps", action = ":lua Snacks.picker.keymaps()" },
             { icon = " ", key = "q", desc = "Quit", action = ":qa" },
           },
         },

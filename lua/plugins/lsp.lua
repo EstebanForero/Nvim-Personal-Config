@@ -1,20 +1,3 @@
-local servers = {
-  "basedpyright",
-  "clangd",
-  "cssls",
-  "eslint",
-  "gopls",
-  "html",
-  "jdtls",
-  "jsonls",
-  "lua_ls",
-  "nixd",
-  "rust_analyzer",
-  "tailwindcss",
-  "taplo",
-  "vtsls",
-}
-
 return {
   {
     "mason-org/mason.nvim",
@@ -39,8 +22,7 @@ return {
       {
         "mason-org/mason-lspconfig.nvim",
         opts = {
-          ensure_installed = servers,
-          automatic_enable = servers,
+          automatic_enable = true,
         },
       },
     },
@@ -48,8 +30,6 @@ return {
       vim.lsp.config("*", {
         capabilities = require("blink.cmp").get_lsp_capabilities(),
       })
-
-      vim.lsp.enable(servers)
     end,
   },
   {
@@ -59,17 +39,6 @@ return {
     dependencies = { "mason-org/mason.nvim" },
     opts = {
       ensure_installed = {
-        "biome",
-        "clang-format",
-        "gofumpt",
-        "goimports",
-        "golangci-lint",
-        "markdownlint",
-        "nixfmt",
-        "prettierd",
-        "ruff",
-        "shellcheck",
-        "shfmt",
         "stylua",
         "tree-sitter-cli",
       },

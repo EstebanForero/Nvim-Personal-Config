@@ -17,7 +17,7 @@ A modular, non-AI Neovim 0.12+ configuration built around native LSP APIs, Oxoca
 ./scripts/install.sh
 ```
 
-On first launch, `lazy.nvim` installs plugins and Mason installs configured language tooling, including the Tree-sitter CLI required by the bleeding-edge Treesitter branch. Use `:checkhealth` if a language server cannot start.
+On first launch, `lazy.nvim` installs plugins and Mason installs only the core Lua and Tree-sitter tools. Language servers are installed explicitly from `:Mason` and are enabled automatically once installed. This avoids downloading runtimes for languages you do not use.
 
 ## Keymap layout
 
