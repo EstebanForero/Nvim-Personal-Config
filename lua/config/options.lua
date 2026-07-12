@@ -1,5 +1,7 @@
 local opt = vim.opt
 
+vim.g.esteban_start_cwd = vim.fs.normalize((vim.uv or vim.loop).cwd() or vim.fn.getcwd())
+
 opt.number = true
 opt.relativenumber = true
 opt.cursorline = true

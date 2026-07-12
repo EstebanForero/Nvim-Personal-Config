@@ -13,6 +13,10 @@ local palette = {
   red = "#ff7eb6",
 }
 
+local function project_cwd()
+  return vim.g.esteban_start_cwd or vim.fn.getcwd()
+end
+
 return {
   {
     "nyoom-engineering/oxocarbon.nvim",
@@ -107,7 +111,7 @@ return {
     },
     keys = {
       { "<leader><space>", function() Snacks.picker.smart() end, desc = "Smart find files" },
-      { "<leader>e", function() Snacks.explorer() end, desc = "File explorer" },
+      { "<leader>e", function() Snacks.explorer({ cwd = project_cwd() }) end, desc = "File explorer" },
       { "<leader>ff", function() Snacks.picker.files() end, desc = "Find files" },
       { "<leader>fg", function() Snacks.picker.grep() end, desc = "Find text" },
       { "<leader>fb", function() Snacks.picker.buffers() end, desc = "Find buffers" },
