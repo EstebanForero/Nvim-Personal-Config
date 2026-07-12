@@ -17,6 +17,14 @@ A modular, non-AI Neovim 0.12+ configuration built around native LSP APIs, Oxoca
 ./scripts/install.sh
 ```
 
+To install the same configuration for Linux's root user as well, run the installer a second time with explicit root mode:
+
+```sh
+sudo ./scripts/install.sh --root
+```
+
+The default command links the repository to the current user's Neovim configuration directory. Root mode resolves root's home directory independently and links it to `<root-home>/.config/nvim`. Existing non-symlink configurations are moved to a timestamped backup before either link is created.
+
 On first launch, `lazy.nvim` installs plugins and Mason installs only the core Lua and Tree-sitter tools. Mason-managed language servers are installed explicitly from `:Mason` and are enabled automatically once installed. This avoids downloading runtimes for languages you do not use.
 
 ## Language servers
